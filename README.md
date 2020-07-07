@@ -1,4 +1,4 @@
-# IssueTracker
+# WorkTogether
 
 > Github iOS 앱을 참고한 기존의 [issue-tracker-04](https://github.com/codesquad-member-2020/issue-tracker-04)를 발전 시킨 프로젝트 입니다.
 
