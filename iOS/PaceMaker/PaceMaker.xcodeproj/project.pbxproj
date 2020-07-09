@@ -11,10 +11,12 @@
 		8D1DCBA024B482C70079BE4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DCB9F24B482C70079BE4E /* SceneDelegate.swift */; };
 		8D1DCBA224B482C70079BE4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DCBA124B482C70079BE4E /* ViewController.swift */; };
 		8D1DCBA524B482C70079BE4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D1DCBA324B482C70079BE4E /* Main.storyboard */; };
-		8D1DCBA824B482C70079BE4E /* WorkTogether.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DCBA624B482C70079BE4E /* WorkTogether.xcdatamodeld */; };
+		8D1DCBA824B482C70079BE4E /* PaceMaker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DCBA624B482C70079BE4E /* PaceMaker.xcdatamodeld */; };
 		8D1DCBAA24B482CB0079BE4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1DCBA924B482CB0079BE4E /* Assets.xcassets */; };
 		8D1DCBAD24B482CB0079BE4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D1DCBAB24B482CB0079BE4E /* LaunchScreen.storyboard */; };
-		8D1DCBB824B482CB0079BE4E /* WorkTogetherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DCBB724B482CB0079BE4E /* WorkTogetherTests.swift */; };
+		8D1DCBB824B482CB0079BE4E /* PaceMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DCBB724B482CB0079BE4E /* PaceMakerTests.swift */; };
+		8D4D366424B6DA7000E37C7F /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D366324B6DA7000E37C7F /* Label.swift */; };
+		8D4D366624B6DAAB00E37C7F /* LabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D366524B6DAAB00E37C7F /* LabelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8D1DCB9A24B482C60079BE4E /* WorkTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1DCB9A24B482C60079BE4E /* PaceMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaceMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1DCB9D24B482C70079BE4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D1DCB9F24B482C70079BE4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8D1DCBA124B482C70079BE4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,9 +39,11 @@
 		8D1DCBA924B482CB0079BE4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D1DCBAC24B482CB0079BE4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D1DCBAE24B482CB0079BE4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D1DCBB324B482CB0079BE4E /* WorkTogetherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkTogetherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D1DCBB724B482CB0079BE4E /* WorkTogetherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTogetherTests.swift; sourceTree = "<group>"; };
+		8D1DCBB324B482CB0079BE4E /* PaceMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaceMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1DCBB724B482CB0079BE4E /* PaceMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceMakerTests.swift; sourceTree = "<group>"; };
 		8D1DCBB924B482CB0079BE4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D4D366324B6DA7000E37C7F /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		8D4D366524B6DAAB00E37C7F /* LabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +67,8 @@
 		8D1DCB9124B482C60079BE4E = {
 			isa = PBXGroup;
 			children = (
-				8D1DCB9C24B482C60079BE4E /* WorkTogether */,
-				8D1DCBB624B482CB0079BE4E /* WorkTogetherTests */,
+				8D1DCB9C24B482C60079BE4E /* PaceMaker */,
+				8D1DCBB624B482CB0079BE4E /* PaceMakerTests */,
 				8D1DCB9B24B482C60079BE4E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,13 +76,13 @@
 		8D1DCB9B24B482C60079BE4E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1DCB9A24B482C60079BE4E /* WorkTogether.app */,
-				8D1DCBB324B482CB0079BE4E /* WorkTogetherTests.xctest */,
+				8D1DCB9A24B482C60079BE4E /* PaceMaker.app */,
+				8D1DCBB324B482CB0079BE4E /* PaceMakerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8D1DCB9C24B482C60079BE4E /* WorkTogether */ = {
+		8D1DCB9C24B482C60079BE4E /* PaceMaker */ = {
 			isa = PBXGroup;
 			children = (
 				8D1DCB9D24B482C70079BE4E /* AppDelegate.swift */,
@@ -88,26 +92,28 @@
 				8D1DCBA924B482CB0079BE4E /* Assets.xcassets */,
 				8D1DCBAB24B482CB0079BE4E /* LaunchScreen.storyboard */,
 				8D1DCBAE24B482CB0079BE4E /* Info.plist */,
-				8D1DCBA624B482C70079BE4E /* WorkTogether.xcdatamodeld */,
+				8D1DCBA624B482C70079BE4E /* PaceMaker.xcdatamodeld */,
+				8D4D366324B6DA7000E37C7F /* Label.swift */,
 			);
-			path = WorkTogether;
+			path = PaceMaker;
 			sourceTree = "<group>";
 		};
-		8D1DCBB624B482CB0079BE4E /* WorkTogetherTests */ = {
+		8D1DCBB624B482CB0079BE4E /* PaceMakerTests */ = {
 			isa = PBXGroup;
 			children = (
-				8D1DCBB724B482CB0079BE4E /* WorkTogetherTests.swift */,
+				8D1DCBB724B482CB0079BE4E /* PaceMakerTests.swift */,
+				8D4D366524B6DAAB00E37C7F /* LabelTests.swift */,
 				8D1DCBB924B482CB0079BE4E /* Info.plist */,
 			);
-			path = WorkTogetherTests;
+			path = PaceMakerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1DCB9924B482C60079BE4E /* WorkTogether */ = {
+		8D1DCB9924B482C60079BE4E /* PaceMaker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D1DCBBC24B482CB0079BE4E /* Build configuration list for PBXNativeTarget "WorkTogether" */;
+			buildConfigurationList = 8D1DCBBC24B482CB0079BE4E /* Build configuration list for PBXNativeTarget "PaceMaker" */;
 			buildPhases = (
 				8D1DCB9624B482C60079BE4E /* Sources */,
 				8D1DCB9724B482C60079BE4E /* Frameworks */,
@@ -117,14 +123,14 @@
 			);
 			dependencies = (
 			);
-			name = WorkTogether;
+			name = PaceMaker;
 			productName = WorkTogether;
-			productReference = 8D1DCB9A24B482C60079BE4E /* WorkTogether.app */;
+			productReference = 8D1DCB9A24B482C60079BE4E /* PaceMaker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8D1DCBB224B482CB0079BE4E /* WorkTogetherTests */ = {
+		8D1DCBB224B482CB0079BE4E /* PaceMakerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D1DCBBF24B482CB0079BE4E /* Build configuration list for PBXNativeTarget "WorkTogetherTests" */;
+			buildConfigurationList = 8D1DCBBF24B482CB0079BE4E /* Build configuration list for PBXNativeTarget "PaceMakerTests" */;
 			buildPhases = (
 				8D1DCBAF24B482CB0079BE4E /* Sources */,
 				8D1DCBB024B482CB0079BE4E /* Frameworks */,
@@ -135,9 +141,9 @@
 			dependencies = (
 				8D1DCBB524B482CB0079BE4E /* PBXTargetDependency */,
 			);
-			name = WorkTogetherTests;
+			name = PaceMakerTests;
 			productName = WorkTogetherTests;
-			productReference = 8D1DCBB324B482CB0079BE4E /* WorkTogetherTests.xctest */;
+			productReference = 8D1DCBB324B482CB0079BE4E /* PaceMakerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -159,7 +165,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8D1DCB9524B482C60079BE4E /* Build configuration list for PBXProject "WorkTogether" */;
+			buildConfigurationList = 8D1DCB9524B482C60079BE4E /* Build configuration list for PBXProject "PaceMaker" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -172,8 +178,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1DCB9924B482C60079BE4E /* WorkTogether */,
-				8D1DCBB224B482CB0079BE4E /* WorkTogetherTests */,
+				8D1DCB9924B482C60079BE4E /* PaceMaker */,
+				8D1DCBB224B482CB0079BE4E /* PaceMakerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -205,7 +211,8 @@
 			files = (
 				8D1DCBA224B482C70079BE4E /* ViewController.swift in Sources */,
 				8D1DCB9E24B482C70079BE4E /* AppDelegate.swift in Sources */,
-				8D1DCBA824B482C70079BE4E /* WorkTogether.xcdatamodeld in Sources */,
+				8D1DCBA824B482C70079BE4E /* PaceMaker.xcdatamodeld in Sources */,
+				8D4D366424B6DA7000E37C7F /* Label.swift in Sources */,
 				8D1DCBA024B482C70079BE4E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,7 +221,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D1DCBB824B482CB0079BE4E /* WorkTogetherTests.swift in Sources */,
+				8D4D366624B6DAAB00E37C7F /* LabelTests.swift in Sources */,
+				8D1DCBB824B482CB0079BE4E /* PaceMakerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +231,7 @@
 /* Begin PBXTargetDependency section */
 		8D1DCBB524B482CB0079BE4E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8D1DCB9924B482C60079BE4E /* WorkTogether */;
+			target = 8D1DCB9924B482C60079BE4E /* PaceMaker */;
 			targetProxy = 8D1DCBB424B482CB0079BE4E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -368,12 +376,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66M38QS75Q;
-				INFOPLIST_FILE = WorkTogether/Info.plist;
+				INFOPLIST_FILE = PaceMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.codesquad.WorkTogether;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codesquad.PaceMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,12 +394,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66M38QS75Q;
-				INFOPLIST_FILE = WorkTogether/Info.plist;
+				INFOPLIST_FILE = PaceMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.codesquad.WorkTogether;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codesquad.PaceMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -405,18 +413,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66M38QS75Q;
-				INFOPLIST_FILE = WorkTogetherTests/Info.plist;
+				INFOPLIST_FILE = PaceMakerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.codesquad.WorkTogetherTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codesquad.PaceMakerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkTogether.app/WorkTogether";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PaceMaker.app/PaceMaker";
 			};
 			name = Debug;
 		};
@@ -427,25 +435,25 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66M38QS75Q;
-				INFOPLIST_FILE = WorkTogetherTests/Info.plist;
+				INFOPLIST_FILE = PaceMakerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.codesquad.WorkTogetherTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codesquad.PaceMakerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkTogether.app/WorkTogether";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PaceMaker.app/PaceMaker";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8D1DCB9524B482C60079BE4E /* Build configuration list for PBXProject "WorkTogether" */ = {
+		8D1DCB9524B482C60079BE4E /* Build configuration list for PBXProject "PaceMaker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D1DCBBA24B482CB0079BE4E /* Debug */,
@@ -454,7 +462,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8D1DCBBC24B482CB0079BE4E /* Build configuration list for PBXNativeTarget "WorkTogether" */ = {
+		8D1DCBBC24B482CB0079BE4E /* Build configuration list for PBXNativeTarget "PaceMaker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D1DCBBD24B482CB0079BE4E /* Debug */,
@@ -463,7 +471,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8D1DCBBF24B482CB0079BE4E /* Build configuration list for PBXNativeTarget "WorkTogetherTests" */ = {
+		8D1DCBBF24B482CB0079BE4E /* Build configuration list for PBXNativeTarget "PaceMakerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D1DCBC024B482CB0079BE4E /* Debug */,
@@ -475,13 +483,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8D1DCBA624B482C70079BE4E /* WorkTogether.xcdatamodeld */ = {
+		8D1DCBA624B482C70079BE4E /* PaceMaker.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				8D1DCBA724B482C70079BE4E /* WorkTogether.xcdatamodel */,
 			);
 			currentVersion = 8D1DCBA724B482C70079BE4E /* WorkTogether.xcdatamodel */;
-			path = WorkTogether.xcdatamodeld;
+			path = PaceMaker.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
