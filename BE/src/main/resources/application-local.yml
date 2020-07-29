@@ -1,0 +1,42 @@
+spring:
+  profiles: local
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:issuetracker
+    username: sa
+    password: sa
+    #    initialization-mode: always
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+        lob:
+        non_contextual_creation: true
+    hibernate:
+      use-new-id-generator-mappings: false
+      ddl-auto: create
+    #    database: mysql
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: false
+        web-allow-others: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+---
+cloud:
+  aws:
+    s3:
+      bucket: s3-angelhack
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
