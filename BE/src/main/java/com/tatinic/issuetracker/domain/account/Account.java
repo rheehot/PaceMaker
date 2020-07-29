@@ -20,8 +20,10 @@ public class Account {
     private Long id;
 
     private String email;
-    private String name;
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    private LoginType loginType;
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
     private List<Assignee> assignees = new ArrayList<>();
