@@ -19,5 +19,5 @@ public class Milestone {
     private Long id;
 
     @OneToMany(mappedBy = "milestone", cascade = CascadeType.ALL)
-    private List<Issue> issues = new ArrayList<>();
+    private final List<Issue> issues = new ArrayList<>();
 }

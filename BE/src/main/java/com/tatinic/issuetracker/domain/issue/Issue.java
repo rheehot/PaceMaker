@@ -3,6 +3,7 @@ package com.tatinic.issuetracker.domain.issue;
 import com.tatinic.issuetracker.domain.account.Account;
 import com.tatinic.issuetracker.domain.comment.Comment;
 import com.tatinic.issuetracker.domain.milestone.Milestone;
+import com.tatinic.issuetracker.web.dto.request.issue.IssueRequestDto;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -34,17 +35,28 @@ public class Issue {
     private LocalDateTime updatedAt;
 
     @OneToMany(mappedBy = "issue", cascade = CascadeType.ALL)
-    private List<Comment> comments = new ArrayList<>();
+    private final List<Comment> comments = new ArrayList<>();
 
     @OneToMany(mappedBy = "issue", cascade = CascadeType.ALL)
-    private List<LabeledIssue> labeledIssues = new ArrayList<>();
+    private final List<LabeledIssue> labeledIssues = new ArrayList<>();
 
     @OneToMany(mappedBy = "issue", cascade = CascadeType.ALL)
-    private List<Assignee> assignees = new ArrayList<>();
+    private final List<Assignee> assignees = new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Account account;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Milestone milestone;
+
+    public static Issue of(IssueRequestDto issueRequestDto) {
+        return Issue.builder()
+                .account(issueRequestDto.getAccount())
+                .title(issueRequestDto.getTitle())
+                .build();
+    }
+
+    public void addComment(Comment newComment) {
+        this.comments.add(newComment);
+    }
 }

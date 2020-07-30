@@ -21,5 +21,5 @@ public class Label {
     private String color;
 
     @OneToMany(mappedBy = "label", cascade = CascadeType.ALL)
-    private List<LabeledIssue> labeledIssues = new ArrayList<>();
+    private final List<LabeledIssue> labeledIssues = new ArrayList<>();
 }

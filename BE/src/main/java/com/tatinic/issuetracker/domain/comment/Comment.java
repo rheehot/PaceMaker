@@ -1,7 +1,9 @@
 package com.tatinic.issuetracker.domain.comment;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tatinic.issuetracker.domain.account.Account;
 import com.tatinic.issuetracker.domain.issue.Issue;
+import com.tatinic.issuetracker.web.dto.request.issue.IssueRequestDto;
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,6 +25,7 @@ public class Comment {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "issue_id")
+    @JsonIgnore
     private Issue issue;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -41,6 +44,16 @@ public class Comment {
             @AttributeOverride(name = "name", column = @Column(name = "emoji_name"))
     })
     @Enumerated(EnumType.STRING)
-    private List<Emoji> emojis = new ArrayList<>();
+    private final List<Emoji> emojis = new ArrayList<>();
 
+    public static Comment of(IssueRequestDto issueRequestDto) {
+        return Comment.builder()
+                .content(issueRequestDto.getCommentContent())
+                .account(issueRequestDto.getAccount())
+                .build();
+    }
+
+    public void addIssue(Issue newIssue) {
+        this.issue = newIssue;
+    }
 }

@@ -27,11 +27,11 @@ public class Account {
     private LoginType loginType;
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
-    private List<Assignee> assignees = new ArrayList<>();
+    private final List<Assignee> assignees = new ArrayList<>();
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
-    private List<Issue> issues = new ArrayList<>();
+    private final List<Issue> issues = new ArrayList<>();
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
-    private List<Comment> comments = new ArrayList<>();
+    private final List<Comment> comments = new ArrayList<>();
 }
