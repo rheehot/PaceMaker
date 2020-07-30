@@ -1,7 +1,8 @@
 package com.tatinic.issuetracker.domain.account;
 
+import com.tatinic.issuetracker.domain.comment.Comment;
 import com.tatinic.issuetracker.domain.issue.Assignee;
-import com.tatinic.issuetracker.domain.issue.Author;
+import com.tatinic.issuetracker.domain.issue.Issue;
 import lombok.*;
 
 import javax.persistence.*;
@@ -29,5 +30,8 @@ public class Account {
     private List<Assignee> assignees = new ArrayList<>();
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
-    private List<Author> authors = new ArrayList<>();
+    private List<Issue> issues = new ArrayList<>();
+
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
+    private List<Comment> comments = new ArrayList<>();
 }

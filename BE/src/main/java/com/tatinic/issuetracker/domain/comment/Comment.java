@@ -1,5 +1,6 @@
 package com.tatinic.issuetracker.domain.comment;
 
+import com.tatinic.issuetracker.domain.account.Account;
 import com.tatinic.issuetracker.domain.issue.Issue;
 import lombok.*;
 
@@ -23,6 +24,10 @@ public class Comment {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "issue_id")
     private Issue issue;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "account_id")
+    private Account account;
 
     /* 엔젤해커톤 참고해서 아래와 같이 코드 작성함.
        차이점은 Enum타입을 List로 가지고 있는 형태.
