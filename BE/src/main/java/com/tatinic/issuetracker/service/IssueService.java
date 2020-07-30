@@ -40,6 +40,7 @@ public class IssueService {
                 .comments(savedIssue.getComments())
                 .milestone(savedIssue.getMilestone())
                 .title(issueRequestDto.getTitle())
+                .issueStatus(newIssue.getStatus())
                 .build();
     }
 }

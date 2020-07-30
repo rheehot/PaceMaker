@@ -1,5 +1,6 @@
 package com.tatinic.issuetracker.web.controller;
 
+import com.tatinic.issuetracker.domain.issue.IssueStatus;
 import com.tatinic.issuetracker.web.dto.request.issue.IssueRequestDto;
 import com.tatinic.issuetracker.web.dto.response.issue.IssueResponseDto;
 import com.tatinic.issuetracker.web.login.OauthEnum;
@@ -11,7 +12,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Mono;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -29,7 +29,6 @@ public class IssueControllerTest {
     private final static String requestMapping = "/issue";
     private final static String JWT_TOKEN = "jwt";
 
-    @Transactional
     @CsvSource({"issueTitle, commentContent"})
     @ParameterizedTest
     void 이슈생성API를_테스트한다(String title, String commentContent) {
@@ -53,5 +52,6 @@ public class IssueControllerTest {
 
         assertThat(issueResponseDto.getId()).isEqualTo(1);
         assertThat(issueResponseDto.getComments().get(0).getId()).isEqualTo(1);
+        assertThat(issueResponseDto.getIssueStatus()).isEqualTo(IssueStatus.OPEN);
     }
 }

@@ -2,6 +2,7 @@ package com.tatinic.issuetracker.web.dto.response.issue;
 
 import com.tatinic.issuetracker.domain.account.Account;
 import com.tatinic.issuetracker.domain.comment.Comment;
+import com.tatinic.issuetracker.domain.issue.IssueStatus;
 import com.tatinic.issuetracker.domain.label.Label;
 import com.tatinic.issuetracker.domain.milestone.Milestone;
 import lombok.*;
@@ -21,4 +22,5 @@ public class IssueResponseDto {
     private List<Account> assignees;
     private Account account;
     private Milestone milestone;
+    private IssueStatus issueStatus;
 }

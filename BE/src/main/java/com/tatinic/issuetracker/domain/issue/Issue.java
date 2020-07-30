@@ -34,6 +34,9 @@ public class Issue {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
+    @Enumerated(EnumType.STRING)
+    private IssueStatus status;
+
     @OneToMany(mappedBy = "issue", cascade = CascadeType.ALL)
     private final List<Comment> comments = new ArrayList<>();
 
@@ -53,6 +56,7 @@ public class Issue {
         return Issue.builder()
                 .account(issueRequestDto.getAccount())
                 .title(issueRequestDto.getTitle())
+                .status(IssueStatus.OPEN)
                 .build();
     }
 
