@@ -1,5 +1,6 @@
 package com.tatinic.issuetracker.service;
 
+import com.tatinic.issuetracker.domain.account.LoginType;
 import com.tatinic.issuetracker.exception.InvalidTokenException;
 import com.tatinic.issuetracker.web.login.OauthEnum;
 import io.jsonwebtoken.Claims;
@@ -45,17 +46,15 @@ public class JwtService {
             Jwts.parser().setSigningKey(OauthEnum.SECRET_KEY.getValue()).parseClaimsJws(token);
             return true;
         } catch (Exception e) {
-            throw new InvalidTokenException(e.getMessage());
+            return false;
         }
     }
 
-    public String getUserId() {
-        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
-        String token = request.getHeader(OauthEnum.AUTHORIZATION.getValue());
-        if (token != null) {
-            Jws<Claims> claims = Jwts.parser().setSigningKey(OauthEnum.SECRET_KEY.getValue()).parseClaimsJws(token);
+    public String getUserId(String jwtToken) {
+        if (jwtToken != null) {
+            Jws<Claims> claims = Jwts.parser().setSigningKey(OauthEnum.SECRET_KEY.getValue()).parseClaimsJws(jwtToken);
             return claims.getBody().getSubject();
         }
-        return GUEST;
+        return LoginType.GUEST.getValue();
     }
 }
