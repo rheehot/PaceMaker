@@ -1,7 +1,7 @@
 spring:
   profiles:
     active: local
-    include: aws
+    include: aws, oauth
 
 # logging 설정
 logging:

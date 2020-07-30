@@ -26,7 +26,7 @@ public class LoginService {
         GithubInformationOfUser githubInformationOfUser = requestUserInfo(githubResponseDto.getAccessToken());
         log.info("Github UserId : {}", githubInformationOfUser);
 
-        userService.save(githubInformationOfUser);
+        userService.oauthUserSave(githubInformationOfUser);
         String jwt = jwtService.createJwt(githubInformationOfUser.getUserId());
 
         Cookie cookie = new Cookie(OauthEnum.USER_ID.getValue(), githubInformationOfUser.getUserId());

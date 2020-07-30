@@ -1,6 +1,5 @@
 spring:
   profiles: dev
-    include: oauth
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://rds-anglehack.cutixbfyzqqm.ap-northeast-2.rds.amazonaws.com:3306/angelhack?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useLegacyDatetimeCode=false

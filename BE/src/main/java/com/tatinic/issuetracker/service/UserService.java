@@ -2,6 +2,7 @@ package com.tatinic.issuetracker.service;
 
 import com.tatinic.issuetracker.domain.AccountRepository;
 import com.tatinic.issuetracker.domain.account.Account;
+import com.tatinic.issuetracker.domain.account.LoginType;
 import com.tatinic.issuetracker.web.login.GithubInformationOfUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,9 +13,15 @@ public class UserService {
 
     private final AccountRepository accountRepository;
 
-    public void save(GithubInformationOfUser githubInformationOfUser) {
+    public void oauthUserSave(GithubInformationOfUser githubInformationOfUser) {
         Account account = accountRepository
                 .findByUserId(githubInformationOfUser.getUserId()).orElse(new Account());
-        accountRepository.save(account);
+        if (account.getId() == null) {
+            Account account1 = Account.builder()
+                    .userId(githubInformationOfUser.getUserId())
+                    .loginType(LoginType.OAUTH)
+                    .build();
+            accountRepository.save(account1);
+        }
     }
 }
