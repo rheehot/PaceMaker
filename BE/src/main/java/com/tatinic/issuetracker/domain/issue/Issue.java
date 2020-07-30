@@ -5,6 +5,7 @@ import com.tatinic.issuetracker.domain.account.Account;
 import com.tatinic.issuetracker.domain.comment.Comment;
 import com.tatinic.issuetracker.domain.milestone.Milestone;
 import com.tatinic.issuetracker.web.dto.request.issue.IssueRequestDto;
+import com.tatinic.issuetracker.web.dto.request.issue.IssueUpdateRequestDto;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -72,5 +73,13 @@ public class Issue {
         } else {
             this.status = IssueStatus.OPEN;
         }
+    }
+
+    public boolean isLoginUser(String loginUserId) {
+        return this.account.getUserId().equals(loginUserId);
+    }
+
+    public void update(IssueUpdateRequestDto issueUpdateRequestDto) {
+        this.title = issueUpdateRequestDto.getTitle();
     }
 }

@@ -7,6 +7,7 @@ import com.tatinic.issuetracker.domain.issue.Issue;
 import com.tatinic.issuetracker.domain.issue.IssueRepository;
 import com.tatinic.issuetracker.web.dto.request.issue.IssueRequestDto;
 import com.tatinic.issuetracker.web.dto.request.issue.IssueStatusRequestDto;
+import com.tatinic.issuetracker.web.dto.request.issue.IssueUpdateRequestDto;
 import com.tatinic.issuetracker.web.dto.response.issue.IssueResponseDto;
 import com.tatinic.issuetracker.web.dto.response.issue.SeveralIssueResponseDto;
 import com.tatinic.issuetracker.web.login.OauthEnum;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -70,5 +72,34 @@ public class IssueService {
 
     private String getLoginUserId(HttpServletRequest request) {
         return (String) request.getAttribute(OauthEnum.USER_ID.getValue());
+    }
+
+    public IssueResponseDto updateIssue(Long issueId,
+                                        IssueUpdateRequestDto issueUpdateRequestDto,
+                                        HttpServletRequest request) {
+        Issue savedIssue = issueRepository.findById(issueId).orElse(new Issue());
+//        String loginUserId = getLoginUserId(request);
+        String loginUserId = "guswns1659";
+        if (savedIssue.isLoginUser(loginUserId)) {
+            savedIssue.update(issueUpdateRequestDto);
+            return IssueResponseDto.of(issueRepository.save(savedIssue));
+        }
+        throw new IllegalStateException("수정 권한이 없습니다.");
+    }
+
+    public IssueResponseDto findById(Long issueId) {
+        Issue savedIssue = issueRepository.findById(issueId).orElse(new Issue());
+        return IssueResponseDto.of(savedIssue);
+    }
+
+    public SeveralIssueResponseDto findAll() {
+        List<Issue> issues = issueRepository.findAll();
+        List<IssueResponseDto> data = issues.stream()
+                .map(IssueResponseDto::of)
+                .collect(Collectors.toList());
+
+        return SeveralIssueResponseDto.builder()
+                .data(data)
+                .build();
     }
 }
