@@ -14,7 +14,7 @@ public class UserService {
 
     public void save(GithubInformationOfUser githubInformationOfUser) {
         Account account = accountRepository
-                .findByEmail(githubInformationOfUser.getUserId()).orElse(new Account());
+                .findByUserId(githubInformationOfUser.getUserId()).orElse(new Account());
         accountRepository.save(account);
     }
 }

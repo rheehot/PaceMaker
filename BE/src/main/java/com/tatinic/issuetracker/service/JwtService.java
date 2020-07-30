@@ -17,16 +17,8 @@ import java.util.Map;
 
 @Service
 public class JwtService {
-    private final String SECRET_KEY = "issueTracker04";
-    private final String AUTHORIZATION = "Authorization";
-    private final String NULL_TOKEN = "Token 정보가 올바르지 않습니다.";
     private final String GUEST = "guest";
-    // JwtEnum 이넘 객체에 들어갈 상수들
     private final SignatureAlgorithm SIGNATUREALGORITHM = SignatureAlgorithm.HS256;
-    private final String USER_ID = "userId";
-    private final String TYP = "typ";
-    private final String TYP_VALUE = "JWT";
-    private final String ALG = "HS256";
     private final long EXPIRATION_TIME = 1000 * 60 * 60 * 10;
 
 

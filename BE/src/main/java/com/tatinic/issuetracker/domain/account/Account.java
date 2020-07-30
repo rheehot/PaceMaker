@@ -19,7 +19,7 @@ public class Account {
     @GeneratedValue
     private Long id;
 
-    private String email;
+    private String userId;
     private String password;
 
     @Enumerated(EnumType.STRING)
