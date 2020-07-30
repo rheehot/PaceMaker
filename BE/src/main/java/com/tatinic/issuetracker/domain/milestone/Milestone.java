@@ -1,5 +1,6 @@
 package com.tatinic.issuetracker.domain.milestone;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tatinic.issuetracker.domain.issue.Issue;
 import lombok.*;
 
@@ -18,6 +19,9 @@ public class Milestone {
     @GeneratedValue
     private Long id;
 
+    private String title;
+
+    @JsonIgnore
     @OneToMany(mappedBy = "milestone", cascade = CascadeType.ALL)
     private final List<Issue> issues = new ArrayList<>();
 }

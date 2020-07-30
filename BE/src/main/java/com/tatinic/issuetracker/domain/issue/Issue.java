@@ -1,5 +1,6 @@
 package com.tatinic.issuetracker.domain.issue;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tatinic.issuetracker.domain.account.Account;
 import com.tatinic.issuetracker.domain.comment.Comment;
 import com.tatinic.issuetracker.domain.milestone.Milestone;
@@ -46,6 +47,7 @@ public class Issue {
     @OneToMany(mappedBy = "issue", cascade = CascadeType.ALL)
     private final List<Assignee> assignees = new ArrayList<>();
 
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     private Account account;
 
@@ -62,5 +64,13 @@ public class Issue {
 
     public void addComment(Comment newComment) {
         this.comments.add(newComment);
+    }
+
+    public void changeStatus() {
+        if (this.status.equals(IssueStatus.OPEN)) {
+            this.status = IssueStatus.CLOSED;
+        } else {
+            this.status = IssueStatus.OPEN;
+        }
     }
 }
