@@ -3,12 +3,14 @@ package com.tatinic.issuetracker.domain.comment;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tatinic.issuetracker.domain.account.Account;
 import com.tatinic.issuetracker.domain.issue.Issue;
+import com.tatinic.issuetracker.web.dto.request.comment.CommentRequestDto;
 import com.tatinic.issuetracker.web.dto.request.issue.IssueRequestDto;
 import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Getter
 @NoArgsConstructor
@@ -53,7 +55,21 @@ public class Comment {
                 .build();
     }
 
+    public static Comment of(CommentRequestDto commentRequestDto) {
+        return Comment.builder()
+                .content(commentRequestDto.getContent())
+                .account(commentRequestDto.getAccount())
+                .build();
+    }
+
     public void addIssue(Issue newIssue) {
         this.issue = newIssue;
+    }
+
+    public void addEmojis(CommentRequestDto commentRequestDto) {
+        commentRequestDto.getEmojis().stream()
+                .map(Emoji::valueOf)
+                .map(this.emojis::add)
+                .collect(Collectors.toList());
     }
 }

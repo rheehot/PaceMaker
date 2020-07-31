@@ -21,4 +21,6 @@ public enum Emoji {
         this.unicode = unicode;
         this.name = name;
     }
+
+    Emoji() { }
 }

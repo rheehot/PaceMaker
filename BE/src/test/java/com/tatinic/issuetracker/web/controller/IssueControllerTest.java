@@ -7,7 +7,6 @@ import com.tatinic.issuetracker.web.dto.request.issue.IssueUpdateRequestDto;
 import com.tatinic.issuetracker.web.dto.response.issue.IssueResponseDto;
 import com.tatinic.issuetracker.web.dto.response.issue.SeveralIssueResponseDto;
 import com.tatinic.issuetracker.web.login.OauthEnum;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +14,7 @@ import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWeb
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
-import org.springframework.test.web.reactive.server.StatusAssertions;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import org.springframework.web.bind.annotation.PathVariable;
 import reactor.core.publisher.Mono;
 
 import java.util.ArrayList;
